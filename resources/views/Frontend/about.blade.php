@@ -7,7 +7,7 @@
                 <div class="col-xl-12">
                     <div class="bradcam_text">
                         <h3>About Us</h3>
-                        <p><a href="index.html">Home /</a> About</p>
+                        <p><a href="index.html">Home/</a> About</p>
                     </div>
                 </div>
             </div>
