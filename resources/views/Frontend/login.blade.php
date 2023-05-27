@@ -193,14 +193,14 @@ body {
             <div class="input-group">
               <div class="box">
                 <span>
-                  <input placeholder="Email" class="myInput" type="text" />
+                  <input placeholder="Email" class="myInput" type="text" name="" />
                 </span>
               </div>
             </div>
             <div class="input-group">
               <div class="box">
                 <span>
-                  <input placeholder="Password" class="myInput" type="text" />
+                  <input placeholder="Password" class="myInput" type="text" name="" />
                 </span>
               </div>
             </div>
@@ -212,45 +212,58 @@ body {
             </div>
           </div>
         </div>
+
+        {{-- signup form --}}
         <div class="signUp-form form-wraper">
           <div>
             <div class="form-title">
               <h2>Sign Up</h2>
             </div>
-            <div class="input-group">
-              <div class="box">
-                <span>
-                  <input placeholder="Full Name" class="myInput" type="text" />
-                </span>
+            <form action="{{route('user.store')}}" method="POST">
+              @csrf
+              <div class="input-group">
+                <div class="box">
+                  <span>
+                    <input placeholder="Full Name" class="myInput" type="text" name="name"  required/>
+                  </span>
+                </div>
               </div>
-            </div>
-            <div class="input-group">
-              <div class="box">
-                <span>
-                  <input placeholder="Email" class="myInput" type="text" />
-                </span>
+              <div class="input-group">
+                <div class="box">
+                  <span>
+                    <input placeholder="Email" class="myInput" type="text" name="email"  required/>
+                  </span>
+                </div>
               </div>
-            </div>
-            <div class="input-group">
-              <div class="box">
-                <span>
-                  <input placeholder="Mobile No." class="myInput" type="number" />
-                </span>
+              <div class="input-group">
+                <div class="box">
+                  <span>
+                    <input placeholder="Mobile No." class="myInput" type="number"  name="phone" required/>
+                  </span>
+                </div>
               </div>
-            </div>
-            <div style="margin-bottom: 0px;" class="input-group">
-              <div class="box">
-                <span>
-                  <input placeholder="Password" class="myInput" type="password" />
-                </span>
+              <div style="margin-bottom: 0px;" class="input-group">
+                <div class="box">
+                  <span>
+                    <input placeholder="Password" class="myInput" type="password" name="password"  required/>
+                  </span>
+                </div>
+                <div class="box">
+                  <span>
+                    <input placeholder="Confirm  Password" class="myInput" type="password" name="password_confirmation"  required/>
+                  </span>
+                </div>
               </div>
-            </div>
-            <div class="action-button">
-              <button>Sign Up</button>
-            </div>
+              <div class="action-button">
+                <button>Sign Up</button>
+              </div>
+            </form>
+            
+
           </div>
         </div>
       </div>
+
       <div id="multiple-btn" class="bg-btn-container">
         <div class="action-button">
           <button>Login</button>

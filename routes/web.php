@@ -25,6 +25,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 // Auth Routes
 Route::get('login',[LoginController::class,'login'])->name('login');
+Route::post('user-rigester',[RegisterController::class,'store_user'])->name('user.store');
 
 Route::get('/', [HomeController::class, 'index' ]);
 Route::get('/about', [AboutController::class, 'index' ]);
