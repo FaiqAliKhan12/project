@@ -183,35 +183,39 @@ body {
 </style>
 
 <section>
-    <div class="main-form-container">
-      <div id="form_section" class="form-container">
-        <div class="login-form form-wraper ">
-          <div>
-            <div class="form-title">
-              <h2>Login</h2>
-            </div>
-            <div class="input-group">
-              <div class="box">
-                <span>
-                  <input placeholder="Email" class="myInput" type="text" name="" />
-                </span>
+  <div class="main-form-container">
+    <div id="form_section" class="form-container">
+      <div class="login-form form-wraper ">
+            <form action="{{route('user.login')}}" method="POST">
+            @csrf
+            <div>
+              <div class="form-title">
+                <h2>Login</h2>
+              </div>
+              <div class="input-group">
+                <div class="box">
+                  <span>
+                    <input placeholder="Email" class="myInput" type="text" name="email"  required/>
+                  </span>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="box">
+                  <span>
+                    <input type="password" placeholder="Password" class="myInput"  name="password"  required/>
+                  </span>
+                </div>
+              </div>
+              {{-- <div class="forget-password">
+                <a href="">FORGOT PASSWORD</a>
+              </div> --}}
+              <div class="action-button">
+                <button type="submit">Login</button>
               </div>
             </div>
-            <div class="input-group">
-              <div class="box">
-                <span>
-                  <input placeholder="Password" class="myInput" type="text" name="" />
-                </span>
-              </div>
-            </div>
-            <div class="forget-password">
-              <a href="">FORGOT PASSWORD</a>
-            </div>
-            <div class="action-button">
-              <button>Login</button>
-            </div>
+          </form> 
           </div>
-        </div>
+      
 
         {{-- signup form --}}
         <div class="signUp-form form-wraper">
@@ -274,6 +278,7 @@ body {
       </div>
   
     </div>
+
   </section>
 
   <script>

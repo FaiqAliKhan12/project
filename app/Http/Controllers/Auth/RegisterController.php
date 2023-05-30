@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 class RegisterController extends Controller
 {
@@ -21,7 +23,13 @@ class RegisterController extends Controller
         'password'=>bcrypt($request->password),
        ]);
        if($user){
-        dd('successfully register');
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+           if(auth()->user()->role_id == 3){
+            
+           }
+        }
+       return redirect()->route('home')->with('success', 'Congrate! your successfuly registered');
        }
+       return redirect()->route('home')->with('error', 'Something went wrong please try again');
     }
 }

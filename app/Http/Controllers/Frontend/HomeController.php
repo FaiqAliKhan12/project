@@ -10,4 +10,9 @@ class HomeController extends Controller
     public function Index(){
       return view('Frontend.index')  ;
     }
+
+    public function book_appointment(Request $request)
+    {
+      dd($request->all());
+    }
 }

@@ -489,4 +489,30 @@
     </div>
     <!-- Emergency_contact end -->
 
+
+
+{{-- Toastr message --}}
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+<script>
+   
+    @if ($message = Session::get('success'))
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "preventDuplicates": true,
+        };
+        toastr.options.timeOut = 2000
+        toastr.success('{{ $message }}');
+    @elseif ($message = Session::get('error'))
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "preventDuplicates": true,
+        };
+        toastr.options.timeOut = 2000
+        toastr.error('{{ $message }}');
+    @endif
+</script>
 @endsection

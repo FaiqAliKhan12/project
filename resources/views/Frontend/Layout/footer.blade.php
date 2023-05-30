@@ -99,20 +99,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- link that opens popup -->
 
     <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
+    <form id="test-form" class="white-popup-block mfp-hide" action="{{route('book.appointment')}}" method="POST">
+        @csrf
         <div class="popup_box ">
             <div class="popup_inner">
                 <h3>Make an Appointment</h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-6">
-                            <input id="datepicker" placeholder="Pick date">
+                            <input id="datepicker" placeholder="Pick date" name="date" required>
                         </div>
                         <div class="col-xl-6">
-                            <input id="datepicker2" placeholder="Suitable time">
+                            <input type="time" placeholder="Suitable time" name="time" required>
                         </div>
                         <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="">
+                            <select class="form-select wide" id="default-select" class="" name="depart" required>
                                 <option data-display="Select Department">Department</option>
                                 <option value="1">Eye Care</option>
                                 <option value="2">Physical Therapy</option>
@@ -120,7 +121,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             </select>
                         </div>
                         <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="">
+                            <select class="form-select wide" id="default-select" class="" name="doctor_name" required>
                                 <option data-display="Doctors">Doctors</option>
                                 <option value="1">Mirazul Alom</option>
                                 <option value="2">Monzul Alom</option>
@@ -128,13 +129,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             </select>
                         </div>
                         <div class="col-xl-6">
-                            <input type="text"  placeholder="Name">
+                            <input type="text"  placeholder="Name" name="user_name" required>
                         </div>
                         <div class="col-xl-6">
-                            <input type="text"  placeholder="Phone no.">
+                            <input type="text"  placeholder="Phone no." name="phone" required>
                         </div>
                         <div class="col-xl-12">
-                            <input type="email"  placeholder="Email">
+                            <input type="email"  placeholder="Email" name="email" required>
                         </div>
                         <div class="col-xl-12">
                             <button type="submit" class="boxed-btn3">Confirm</button>
