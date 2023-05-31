@@ -84,15 +84,17 @@
                                                 <li><a href="single-blog.html">single-blog</a></li>
                                             </ul>
                                         </li> -->
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
+                                       
                                                 <li><a href="/about">about</a></li>
-                                            </ul>
+                                            
                                         </li>
                                         <li><a href="/doctor">Doctors</a></li>
                                         <li><a href="/contact">Contact</a></li>
+                                        @if(Auth::check())
+                                        <li><a href="{{route('logout')}}">Logout</a></li>
+                                        @else
                                         <li><a href="{{route('login')}}">Login</a></li>
+                                        @endif
                                       
                                     </ul>
                                 </nav>

@@ -26,7 +26,7 @@ class LoginController extends Controller
             dd('doctor login');
            }
            elseif(auth()->user()->role_id == 3){
-            dd('patient login');
+             return redirect()->route('home')->with('success','Congrate! Your are successfully login');
            }
     }
     dd('here');

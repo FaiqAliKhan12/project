@@ -15,13 +15,13 @@ class DepartSeeder extends Seeder
     public function run(): void
     {
         $depart = [
-            ['depart'=>'ortopedic','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
-            ['depart'=>'eye-care','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
-            ['depart'=>'cardiologist','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
-            ['depart'=>'dentist','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
-            ['depart'=>'child-specialist','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
-            ['depart'=>'neuro','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
+            ['depart'=>'ortopedic','description'=>'Esteem spirit temper too say adieus who direct esteem','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
+            ['depart'=>'eye-care','description'=>'Esteem spirit temper too say adieus who direct esteem','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
+            ['depart'=>'cardiologist','description'=>'Esteem spirit temper too say adieus who direct esteem','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
+            ['depart'=>'dentist','description'=>'Esteem spirit temper too say adieus who direct esteem','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
+            ['depart'=>'child-specialist','description'=>'Esteem spirit temper too say adieus who direct esteem','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
+            ['depart'=>'neuro','description'=>'Esteem spirit temper too say adieus who direct esteem','created_at'=>carbon::now(),'updated_at'=>carbon::now()],
            ];
-           Role::insert($depart);
+           Depart::insert($depart);
     }
 }

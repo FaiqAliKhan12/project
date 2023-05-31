@@ -115,17 +115,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         <div class="col-xl-6">
                             <select class="form-select wide" id="default-select" class="" name="depart" required>
                                 <option data-display="Select Department">Department</option>
-                                <option value="1">Eye Care</option>
-                                <option value="2">Physical Therapy</option>
-                                <option value="3">Dental Care</option>
+                                @foreach ($departs as $depart)
+                                <option value="{{$depart->id}}">{{$depart->depart}}</option>
+                                @endforeach
+                               
                             </select>
                         </div>
                         <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="" name="doctor_name" required>
+                            <select class="form-select wide" id="default-select" class="" name="doctor_id" required>
                                 <option data-display="Doctors">Doctors</option>
-                                <option value="1">Mirazul Alom</option>
-                                <option value="2">Monzul Alom</option>
-                                <option value="3">Azizul Isalm</option>
+                                <option value="3">Mirazul Alom</option>
+                             
                             </select>
                         </div>
                         <div class="col-xl-6">
