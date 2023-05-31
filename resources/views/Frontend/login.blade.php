@@ -213,9 +213,9 @@ body {
                 <button type="submit">Login</button>
               </div>
             </div>
-          </form> 
+          </form>
           </div>
-      
+
 
         {{-- signup form --}}
         <div class="signUp-form form-wraper">
@@ -246,23 +246,25 @@ body {
                   </span>
                 </div>
               </div>
-              <div style="margin-bottom: 0px;" class="input-group">
+              <div  class="input-group">
                 <div class="box">
                   <span>
                     <input placeholder="Password" class="myInput" type="password" name="password"  required/>
                   </span>
                 </div>
+              </div>
+              <div  class="input-group">
                 <div class="box">
-                  <span>
-                    <input placeholder="Confirm  Password" class="myInput" type="password" name="password_confirmation"  required/>
-                  </span>
-                </div>
+                    <span>
+                      <input placeholder="Confirm  Password" class="myInput" type="password" name="password_confirmation"  required/>
+                    </span>
+                  </div>
               </div>
               <div class="action-button">
                 <button>Sign Up</button>
               </div>
             </form>
-            
+
 
           </div>
         </div>
@@ -276,7 +278,7 @@ body {
           <button>Sign Up</button>
         </div>
       </div>
-  
+
     </div>
 
   </section>
