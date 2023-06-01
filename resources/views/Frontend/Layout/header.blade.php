@@ -39,23 +39,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-md-6 ">
-                            <div class="social_media_links">
-                                <a href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </div>
+
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i> info@docmed.com</a></li>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> 160160</a></li>
+                                @if (Auth::check())
+                                <li> <i class="fa fa-envelope"></i> {{auth()->user()->email}}</li>
+                                @endif
                                 </ul>
                             </div>
                         </div>
@@ -84,9 +75,9 @@
                                                 <li><a href="single-blog.html">single-blog</a></li>
                                             </ul>
                                         </li> -->
-                                       
+
                                                 <li><a href="/about">about</a></li>
-                                            
+
                                         </li>
                                         <li><a href="/doctor">Doctors</a></li>
                                         <li><a href="/contact">Contact</a></li>
@@ -95,7 +86,7 @@
                                         @else
                                         <li><a href="{{route('login')}}">Login</a></li>
                                         @endif
-                                      
+
                                     </ul>
                                 </nav>
                             </div>

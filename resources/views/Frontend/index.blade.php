@@ -145,15 +145,15 @@
                             <img src="img/department/1.png" alt="">
                         </div>
                         <div class="department_content">
-                            <h3><a href="#">{{$depart->depart}}</a></h3>
+                            <h3>{{$depart->depart}}</h3>
                             <p>{{$depart->description}}</p>
-                           
+
                         </div>
                     </div>
-                </div>  
+                </div>
                 @endforeach
-              
-               
+
+
             </div>
         </div>
     </div>
@@ -258,7 +258,7 @@
             <div class="border_bottom">
                     <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                
+
                                     <div class="row align-items-center">
                                             <div class="col-xl-6 col-md-6">
                                                 <div class="business_info">
@@ -350,9 +350,9 @@
                                 <h3>{{$doctor->doctor_name}}</h3>
                                 <span></span>
                             </div>
-                        </div>   
+                        </div>
                         @endforeach
-                       
+
                     </div>
                 </div>
             </div>
@@ -398,7 +398,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 <script>
-   
+
     @if ($message = Session::get('success'))
         toastr.options = {
             "closeButton": true,

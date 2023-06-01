@@ -36,6 +36,7 @@ Route::get('/doctor', [DoctorController::class, 'index' ]);
 Route::get('/service', [ServiceController::class, 'index' ]);
 Route::get('/department', [DepartmentController::class, 'index' ]);
 Route::get('/contact', [ContactController::class, 'index' ]);
+Route::post('contact-us', [ContactController::class, 'contact_us' ])->name('contact.us');
 
 
 Route::get('/admin',[AdminController::class,'index'])->name('admin.dashboard');
