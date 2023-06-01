@@ -179,12 +179,12 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>John Doe</span>
+                                    <img src="{{(Auth::check() && auth()->user()->image != '') ? asset('images/'.auth()->user()->image) : asset('images/defualt_user.jpg')}}" " class="img-radius" alt="User-Profile-Image">
+                                    <span>@if (Auth::check()) {{auth()->user()->name}} @endif</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
-                                    <li class="waves-effect waves-light">
+                                    {{-- <li class="waves-effect waves-light">
                                         <a href="#!">
                                             <i class="ti-settings"></i> Settings
                                         </a>
@@ -203,9 +203,10 @@
                                         <a href="auth-lock-screen.html">
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
-                                    </li>
+                                    </li> --}}
+
                                     <li class="waves-effect waves-light">
-                                        <a href="auth-normal-sign-in.html">
+                                        <a href="{{route('logout')}}">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
                                     </li>
@@ -223,21 +224,10 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">
-                                    <div class="user-details">
-                                        <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
-                                    </div>
+                                    <img class="img-80 img-radius" src="{{(Auth::check() && auth()->user()->image != '') ? asset('images/'.auth()->user()->image) : asset('images/defualt_user.jpg')}}" alt="User-Profile-Image">
                                 </div>
 
-                                <div class="main-menu-content">
-                                    <ul>
-                                        <li class="more-details">
-                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
-                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
-                                            <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
-                                        </li>
-                                    </ul>
-                                </div>
+
                             </div>
                             <div class="p-15 p-b-0">
                                 <form class="form-material">
@@ -272,7 +262,7 @@
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                            <a href="{{route('admin.list.doctor')}}" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Doctor List</span>
                                                 <span class="pcoded-mcaret"></span>
@@ -354,5 +344,7 @@
     <!-- custom js -->
     <script type="text/javascript" src="{{url('backend/pages/dashboard/custom-dashboard.js')}}"></script>
     <script type="text/javascript" src="{{url('backend/js/script.js')}}"></script>
+
+
 </body>
 </html>

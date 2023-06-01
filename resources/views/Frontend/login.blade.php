@@ -304,4 +304,22 @@ form_container.classList.toggle("left-right");
 
 });
 });
+
+  @if ($message = Session::get('success'))
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "preventDuplicates": true,
+        };
+        toastr.options.timeOut = 2000
+        toastr.success('{{ $message }}');
+    @elseif ($message = Session::get('error'))
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "preventDuplicates": true,
+        };
+        toastr.options.timeOut = 2000
+        toastr.error('{{ $message }}');
+    @endif
   </script>

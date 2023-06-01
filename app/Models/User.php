@@ -19,10 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'role_id',
+        'depart_id',
         'name',
         'email',
         'phone',
         'password',
+        'address',
+        'image',
     ];
 
     /**
@@ -43,4 +46,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // dget depart
+    public function getDepart()
+    {
+        return $this->belongsTo(Depart::class, 'depart_id', 'id');
+    }
 }
