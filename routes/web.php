@@ -41,9 +41,13 @@ Route::post('contact-us', [ContactController::class, 'contact_us' ])->name('cont
 
 Route::get('/admin',[AdminController::class,'index'])->name('admin.dashboard');
 Route::get('doctor-form',[AdminController::class,'create'])->name('admin.create.doctor');
+
 Route::post('store-doctor',[AdminController::class,'store'])->name('admin.store.doctor');
 Route::get('doctoe-list',[AdminController::class,'listing'])->name('admin.list.doctor');
 Route::get('destroy/{id}',[AdminController::class,'destroy'])->name('admin.delete.doctor');
 Route::get('edit/{id}',[AdminController::class,'edit'])->name('admin.edit.doctor');
 Route::post('update',[AdminController::class,'update'])->name('admin.update.doctor');
+
+Route::get('patient-list',[AdminController::class,'patient_list'])->name('admin.list.patient');
+
 
