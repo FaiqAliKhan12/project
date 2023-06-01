@@ -11,4 +11,8 @@ class AdminController extends Controller
     {
         return view('Backend.index');
     }
+    public function create()
+    {
+        return view('Backend.doctor.create');
+    }
 }

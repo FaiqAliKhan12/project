@@ -12,4 +12,6 @@ class DoctorController extends Controller
         $departs = Depart::all();
         return view('Frontend.Doctors',['departs'=>$departs,]);
     }
+
+
 }
