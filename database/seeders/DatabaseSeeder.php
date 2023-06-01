@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             DepartSeeder::class,
             DoctorSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }
