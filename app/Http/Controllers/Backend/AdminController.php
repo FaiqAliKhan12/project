@@ -19,7 +19,6 @@ class AdminController extends Controller
         return view('Backend.doctor.create',['departs'=>$departs]);
     }
 
-<<<<<<< HEAD
     public function store(Request $request )
     {
         // dd($request->all());
@@ -94,10 +93,8 @@ class AdminController extends Controller
             return redirect()->route('admin.list.doctor');
         }
 
-=======
     public function patient_list()
     {
         return view('Backend.patient.list');
     }
->>>>>>> d2eabfc9549339c1e265c3eb8ab843cd3aad389c
 }
