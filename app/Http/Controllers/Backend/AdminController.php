@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('Backend.doctor.create');
     }
+
+    public function patient_list()
+    {
+        return view('Backend.patient.list');
+    }
 }

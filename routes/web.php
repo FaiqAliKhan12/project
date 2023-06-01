@@ -41,4 +41,5 @@ Route::post('contact-us', [ContactController::class, 'contact_us' ])->name('cont
 
 Route::get('/admin',[AdminController::class,'index'])->name('admin.dashboard');
 Route::get('doctor-form',[AdminController::class,'create'])->name('admin.create.doctor');
+Route::get('patient-list',[AdminController::class,'patient_list'])->name('admin.list.patient');
 
