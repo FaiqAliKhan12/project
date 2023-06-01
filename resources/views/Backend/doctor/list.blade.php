@@ -31,7 +31,7 @@
                     @foreach ($doctors  as $doctor )
                     <tr>
                         <th scope="row">
-                        <div><img src="{{asset('images/'.$doctor->image)}}" alt="" style="width: 50px; height:50; border-radius:50%"></div>
+                        <div><img src="{{($doctor->image != '') ? asset('images/'.$doctor->image) : asset('images/defualt_user.jpg')}}" alt="" style="width: 50px; height:50; border-radius:50%"></div>
                     </th>
                         <td>{{$doctor->name}}</td>
                         <td>{{$doctor->email}}</td>
