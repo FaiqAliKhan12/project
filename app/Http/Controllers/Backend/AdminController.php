@@ -95,6 +95,26 @@ class AdminController extends Controller
 
     public function patient_list()
     {
-        return view('Backend.patient.list');
+        $patients = User::where('role_id',3)->get();
+        return view('Backend.patient.list',['patients'=>$patients]);
+    }
+
+    public function patient_edit($id)
+    {
+        $patient = User::where('id',$id)->first();
+        return view('Backend.patient.edit',['patient'=>$patient]);
+    }
+
+    public function patient_update(Request $request)
+    {
+        User::where('id',$request->id)->update([
+
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'address'=>$request->address,
+            'password'=>bcrypt($request->password),
+        ]);
+        return redirect()->route('admin.list.patient');
     }
 }

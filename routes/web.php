@@ -47,7 +47,8 @@ Route::get('doctoe-list',[AdminController::class,'listing'])->name('admin.list.d
 Route::get('destroy/{id}',[AdminController::class,'destroy'])->name('admin.delete.doctor');
 Route::get('edit/{id}',[AdminController::class,'edit'])->name('admin.edit.doctor');
 Route::post('update',[AdminController::class,'update'])->name('admin.update.doctor');
-
 Route::get('patient-list',[AdminController::class,'patient_list'])->name('admin.list.patient');
+Route::get('patient-edit/{id}',[AdminController::class,'patient_edit'])->name('admin.edit.patient');
+Route::post('patient-update',[AdminController::class,'patient_update'])->name('admin.update.patient');
 
 
