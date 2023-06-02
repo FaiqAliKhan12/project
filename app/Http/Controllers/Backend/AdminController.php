@@ -10,6 +10,7 @@ use App\Models\Depart;
 use App\Models\ContactUs;
 use App\Models\Appointment;
 
+
 class AdminController extends Controller
 {
     public function index()

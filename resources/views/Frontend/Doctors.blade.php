@@ -7,7 +7,7 @@
                 <div class="col-xl-12">
                     <div class="bradcam_text">
                         <h3>Doctors</h3>
-                        <p><a href="index.html">Home /</a> Doctors</p>
+                        <p><a href="index.html">Home</a> Doctors</p>
                     </div>
                 </div>
             </div>
@@ -30,83 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/2.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/3.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/4.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/6.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/7.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/8.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/9.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
