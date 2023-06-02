@@ -13,12 +13,12 @@
                         <div class="card">
                             <div class="card-block">
                                 <h4 class="sub-title">Depart Detail</h4>
-                                <form  action="{{route('admin.store.depart')}}" method="POST">
+                                <form  action="{{route('admin.update.depart',[$depart->id])}}" method="POST">
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Department</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="depart" class="form-control" placeholder="Type your title in Placeholder"/>
+                                            <input type="text" name="depart" class="form-control" value="{{$depart->depart}}"/>
                                             @error('depart')<span class="text-danger">{{$message}}</span>@enderror
                                         </div>
                                     </div>
@@ -26,7 +26,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Textarea</label>
                                         <div class="col-sm-10">
-                                            <textarea rows="5" cols="5" name="description" class="form-control"placeholder="Default textarea"></textarea>
+                                            <textarea rows="5" cols="5" name="description" class="form-control">{{$depart->description}}</textarea>
                                             @error('decsription')<span class="text-danger">{{$message}}</span>@enderror
                                         </div>
                                     </div>

@@ -18,25 +18,23 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Message</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Message</th>
                         <th>Subject</th>
                         <th>Actions</th>
-                       
                         </tr>
                 </thead>
                 <tbody>
-                   
+                    @foreach ($contactUs as $contact )
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#">Edit</a> &nbsp; &nbsp; <a href="#">delete</a></td>
+                        <td>{{$contact->name}}</td>
+                        <td>{{$contact->email}}</td>
+                        <td>{{$contact->subject}}</td>
+                        <td>{{$contact->message}}</td>
+                        <td> <a href="{{route('admin.delete.contact',[$contact->id])}}">delete</a></td>
                     </tr>
-                 
-
+                    @endforeach
                 </tbody>
             </table>
         </div>

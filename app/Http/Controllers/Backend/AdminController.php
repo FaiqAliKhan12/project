@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Depart;
+use App\Models\ContactUs;
 
 class AdminController extends Controller
 {
@@ -123,14 +125,51 @@ class AdminController extends Controller
         return view('Backend.depart.create');
     }
 
+     public function store_depart(Request $request )
+     {
+         $request->validate(['depart'=>'required','description'=>'required']);
+         $depart = Depart::create(['depart'=>$request->depart,'description'=>$request->description]);
+         if($depart) return redirect()->route('admin.list.depart');
+     }
+
+
     public function depart_list()
     {
-        return view('Backend.depart.list');
+        $departs = Depart::all();
+        return view('Backend.depart.list',['departs'=>$departs]);
     }
+
+        public function depart_edit($id)
+        {
+            $depart = Depart::find($id);
+            return view('Backend.depart.edit',['depart'=>$depart]);
+        }
+
+        public function depart_update(Request $request,$id)
+        {
+            $request->validate(['depart'=>'required','description'=>'required']);
+            $depart = Depart::where('id',$id)->update(['depart'=>$request->depart,'description'=>$request->description]);
+            if($depart) return redirect()->route('admin.list.depart');
+        }
+
+        public function depart_destroy($id)
+        {
+            Depart::where('id',$id)->delete();
+            return back();
+        }
 
     public function contact_list()
     {
-        return view('Backend.contact.list');
+        $contactUs = ContactUs::all();
+        return view('Backend.contact.list',['contactUs'=>$contactUs]);
     }
+    public function contact_delete($id)
+    {
+         ContactUs::where('id',$id)->delete();
+         return back();
+
+    }
+
+
 
 }

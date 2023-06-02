@@ -21,18 +21,16 @@
                         <th>Department</th>
                         <th>Description</th>
                         <th>Actions</th>
-                       
-                       
                     </tr>
                 </thead>
                 <tbody>
-                   
+                    @foreach ($departs as $depart )
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#">Edit</a> &nbsp; &nbsp; <a href="#">delete</a></td>
+                        <td>{{$depart->depart}}</td>
+                        <td>{{$depart->description}}</td>
+                        <td> <a href="{{route('admin.edit.depart',[$depart->id])}}">Edit</a> &nbsp; &nbsp; <a href="{{route('admin.destroy.depart',[$depart->id])}}">delete</a></td>
                     </tr>
-                 
+                    @endforeach
 
                 </tbody>
             </table>
