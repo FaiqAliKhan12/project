@@ -75,17 +75,18 @@
                                                 <li><a href="single-blog.html">single-blog</a></li>
                                             </ul>
                                         </li> -->
-
-                                                <li><a href="/about">about</a></li>
-
+                                          <li><a href="/about">about</a></li>
                                         </li>
                                         <li><a href="/doctor">Doctors</a></li>
                                         <li><a href="/contact">Contact</a></li>
-                                        @if(Auth::check())
+                                        @if(Auth::check() && auth()->user()->role_id == 1 ||  auth()->user()->role_id == 2)
+                                        <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                        @elseif (Auth::check() && auth()->user()->role_id == 3)
                                         <li><a href="{{route('logout')}}">Logout</a></li>
                                         @else
-                                        <li><a href="{{route('login')}}">Login</a></li>
+                                        <li><a href="{{route('login')}}">login</a></li>
                                         @endif
+
 
                                     </ul>
                                 </nav>
