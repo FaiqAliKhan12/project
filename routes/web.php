@@ -50,5 +50,13 @@ Route::post('update',[AdminController::class,'update'])->name('admin.update.doct
 Route::get('patient-list',[AdminController::class,'patient_list'])->name('admin.list.patient');
 Route::get('patient-edit/{id}',[AdminController::class,'patient_edit'])->name('admin.edit.patient');
 Route::post('patient-update',[AdminController::class,'patient_update'])->name('admin.update.patient');
+Route::get('depart-form',[AdminController::class,'depart_create'])->name('admin.create.depart');
+Route::post('depart-store',[AdminController::class,'store_depart'])->name('admin.store.depart');
+Route::get('depart-edit/{id}',[AdminController::class,'depart_edit'])->name('admin.edit.depart');
+Route::post('depart-update/{id}',[AdminController::class,'depart_update'])->name('admin.update.depart');
+Route::get('depart-destroy/{id}',[AdminController::class,'depart_destroy'])->name('admin.destroy.depart');
+Route::get('depart-list',[AdminController::class,'depart_list'])->name('admin.list.depart');
+Route::get('contact-list',[AdminController::class,'contact_list'])->name('admin.list.contact');
+Route::get('contact-delete/{$id}',[AdminController::class,'contact_delete'])->name('admin.delete.contact');
 
 
