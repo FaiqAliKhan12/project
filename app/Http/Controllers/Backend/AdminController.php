@@ -117,4 +117,20 @@ class AdminController extends Controller
         ]);
         return redirect()->route('admin.list.patient');
     }
+
+    public function depart_create()
+    {
+        return view('Backend.depart.create');
+    }
+
+    public function depart_list()
+    {
+        return view('Backend.depart.list');
+    }
+
+    public function contact_list()
+    {
+        return view('Backend.contact.list');
+    }
+
 }

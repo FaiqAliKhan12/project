@@ -50,5 +50,8 @@ Route::post('update',[AdminController::class,'update'])->name('admin.update.doct
 Route::get('patient-list',[AdminController::class,'patient_list'])->name('admin.list.patient');
 Route::get('patient-edit/{id}',[AdminController::class,'patient_edit'])->name('admin.edit.patient');
 Route::post('patient-update',[AdminController::class,'patient_update'])->name('admin.update.patient');
+Route::get('depart-form',[AdminController::class,'depart_create'])->name('admin.create.depart');
+Route::get('depart-list',[AdminController::class,'depart_list'])->name('admin.list.depart');
+Route::get('contact-list',[AdminController::class,'contact_list'])->name('admin.list.contact');
 
 
