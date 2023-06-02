@@ -18,7 +18,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Department</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="depart" class="form-control" placeholder="Type your title in Placeholder"/>
+                                            <input type="text" name="depart" class="form-control" placeholder="Type department here"/>
                                             @error('depart')<span class="text-danger">{{$message}}</span>@enderror
                                         </div>
                                     </div>
@@ -26,7 +26,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Textarea</label>
                                         <div class="col-sm-10">
-                                            <textarea rows="5" cols="5" name="description" class="form-control"placeholder="Default textarea"></textarea>
+                                            <textarea rows="5" cols="5" name="description" class="form-control"placeholder="Type description"></textarea>
                                             @error('decsription')<span class="text-danger">{{$message}}</span>@enderror
                                         </div>
                                     </div>

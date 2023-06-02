@@ -22,7 +22,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Doctor Name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="name" class="form-control" placeholder="Type your title in Placeholder" required/>
+                                                <input type="text" name="name" class="form-control" placeholder="type name here" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -39,26 +39,26 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="email" name="email" class="form-control"placeholder="Type your title in Placeholder" required/>
+                                                <input type="email" name="email" class="form-control"placeholder="type email here" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Phone</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="phone" class="form-control"placeholder="Type your title in Placeholder" required/>
+                                                <input type="text" name="phone" class="form-control"placeholder="type phone no here" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Address</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="address" class="form-control" placeholder="Type your title in Placeholder required/">
+                                                <input type="text" name="address" class="form-control" placeholder="type address here">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Password</label>
                                             <div class="col-sm-10">
-                                                <input type="password" name="password" class="form-control"placeholder="Password input">
+                                                <input type="password" name="password" class="form-control"placeholder="type password here">
                                             </div>
                                         </div>
 

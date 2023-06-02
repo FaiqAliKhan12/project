@@ -73,14 +73,19 @@
                         </div>
                         <div class="col-xl-6">
                             <select class="form-select wide" id="default-select" class="" name="depart" required>
-                                <option data-display="Select Department">Department</option>
+                                @foreach ($departs as $depart)
+                                <option value="{{$depart->id}}">{{$depart->depart}}</option>
+                                @endforeach
                              
 
                             </select>
                         </div>
                         <div class="col-xl-6">
                             <select class="form-select wide" id="default-select" class="" name="doctor_id" required>
-                               <option value=""></option>
+                                <option data-display="Doctors">Doctors</option>
+                                @foreach ($doctors as $doctor)
+                                <option value="{{$doctor->id}}">{{$doctor->name}}</option>
+                                @endforeach
 
                                
 

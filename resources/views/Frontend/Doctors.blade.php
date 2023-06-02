@@ -25,8 +25,19 @@
                             <img src="img/experts/1.png" alt="">
                         </div>
                         <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
+                            <h3>Dr Adnan</h3>
                             <span>Neurologist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="single_expert mb-40">
+                        <div class="expert_thumb">
+                            <img src="img/experts/1.png" alt="">
+                        </div>
+                        <div class="experts_name text-center">
+                            <h3>Wanda Cole</h3>
+                            <span>Eye Care</span>
                         </div>
                     </div>
                 </div>
@@ -35,6 +46,7 @@
         </div>
     </div>
     <!-- expert_doctors_area_end -->
+    
 
     <!-- testmonial_area_start -->
     <div class="testmonial_area">
