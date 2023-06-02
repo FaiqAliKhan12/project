@@ -40,8 +40,9 @@ Route::post('contact-us', [ContactController::class, 'contact_us' ])->name('cont
 
 
 Route::get('/admin',[AdminController::class,'index'])->name('admin.dashboard');
+Route::get('admin-profile/{id}',[AdminController::class,'admin_profile'])->name('admin.profile');
+Route::post('admin-update-profile/{id}',[AdminController::class,'update_profile'])->name('admin.update.profile');
 Route::get('doctor-form',[AdminController::class,'create'])->name('admin.create.doctor');
-
 Route::post('store-doctor',[AdminController::class,'store'])->name('admin.store.doctor');
 Route::get('doctoe-list',[AdminController::class,'listing'])->name('admin.list.doctor');
 Route::get('destroy/{id}',[AdminController::class,'destroy'])->name('admin.delete.doctor');

@@ -191,11 +191,7 @@
                                             <i class="ti-settings"></i> Settings
                                         </a>
                                     </li>
-                                    <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
-                                            <i class="ti-user"></i> Profile
-                                        </a>
-                                    </li>
+
                                     <li class="waves-effect waves-light">
                                         <a href="email-inbox.html">
                                             <i class="ti-email"></i> My Messages
@@ -206,7 +202,11 @@
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
                                     </li> --}}
-
+                                    <li class="waves-effect waves-light">
+                                        <a href="{{route('admin.profile',[auth()->user()->id])}}">
+                                            <i class="ti-user"></i> Profile
+                                        </a>
+                                    </li>
                                     <li class="waves-effect waves-light">
                                         <a href="{{route('logout')}}">
                                             <i class="ti-layout-sidebar-left"></i> Logout
@@ -240,10 +240,12 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div>
+
+                            {{-- Admin Side bar --}}
+                            @if (Auth::check() && auth()->user()->role_id == 1 )
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="index.html" class="waves-effect waves-dark">
+                                    <a href="{{route('admin.dashboard')}}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
@@ -322,7 +324,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        
+
                                         <li class=" ">
                                             <a href="{{route('admin.list.contact')}}" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -333,6 +335,60 @@
                                     </ul>
                                 </li>
                             </ul>
+                            @else
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active">
+                                    <a href="{{route('admin.dashboard')}}" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Doctor</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="{{route('admin.create.doctor')}}" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Doctor</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="{{route('admin.list.doctor')}}" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Doctor List</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Patient</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+
+                                        <li class=" ">
+                                            <a href="{{route('admin.list.patient')}}" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Patient List</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                            @endif
+
                         </div>
                     </nav>
                     <div class="pcoded-content">
@@ -342,19 +398,11 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Dashboard</h5>
+                                            <h5 class="m-b-10">{{(Auth::check() && auth()->user()->role_id == 1)? 'Admin' : 'Doctor'}}</h5>
                                             <p class="m-b-0">Welcome to Care Services</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <ul class="breadcrumb-title">
-                                            <li class="breadcrumb-item">
-                                                <a href="index.html"> <i class="fa fa-home"></i> </a>
-                                            </li>
-                                            <li class="breadcrumb-item"><a href="#!">Dashboard</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

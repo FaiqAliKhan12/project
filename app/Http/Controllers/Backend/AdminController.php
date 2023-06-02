@@ -170,6 +170,36 @@ class AdminController extends Controller
 
     }
 
+    public function admin_profile($id)
+    {
+        $user = User::find($id);
+        return view('Backend.Adminlayout.profile',['user'=>$user]);
+    }
 
+    public function update_profile(Request  $request,$id)
+    {
+
+        if($request->image){
+                $imageName = time().'.'.$request->image->extension();
+                $request->image->move(public_path('images'), $imageName);
+                User::where('id',$id)->update([
+                    'name'=>$request->name,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'address'=>$request->address,
+                    'password'=>bcrypt($request->password),
+                     'image'=>$imageName,
+                ]);
+                return redirect()->route('admin.dashboard');
+            }
+            User::where('id',$id)->update([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'phone'=>$request->phone,
+                'address'=>$request->address,
+                'password'=>bcrypt($request->password),
+            ]);
+            return redirect()->route('admin.dashboard');
+    }
 
 }

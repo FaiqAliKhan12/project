@@ -79,7 +79,7 @@
                                         </li>
                                         <li><a href="/doctor">Doctors</a></li>
                                         <li><a href="/contact">Contact</a></li>
-                                        @if(Auth::check() && auth()->user()->role_id == 1 ||  auth()->user()->role_id == 2)
+                                        @if(Auth::check() && auth()->user()->role_id == 1 || Auth::check() && auth()->user()->role_id == 2)
                                         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                         @elseif (Auth::check() && auth()->user()->role_id == 3)
                                         <li><a href="{{route('logout')}}">Logout</a></li>
