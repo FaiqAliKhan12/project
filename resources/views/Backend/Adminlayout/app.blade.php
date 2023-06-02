@@ -197,16 +197,21 @@
                                             <i class="ti-email"></i> My Messages
                                         </a>
                                     </li>
-                                    <li class="waves-effect waves-light">
-                                        <a href="auth-lock-screen.html">
-                                            <i class="ti-lock"></i> Lock Screen
-                                        </a>
+
                                     </li> --}}
                                     <li class="waves-effect waves-light">
-                                        <a href="{{route('admin.profile',[auth()->user()->id])}}">
-                                            <i class="ti-user"></i> Profile
-                                        </a>
+                                        @if (Auth::check() && auth()->user()->role_id == 1)
+                                        <a href="{{route('admin.profile',[auth()->user()->id])}}"><i class="ti-user"></i> Profile </a>
+                                        @else
+
+                                        <a href="{{route('doctor.profile',[auth()->user()->id])}}"><i class="ti-user"></i> Profile </a>
+                                        @endif
+
                                     </li>
+                                    <li class="waves-effect waves-light">
+                                        <a href="{{route('home')}}">
+                                            <i class="ti-layout-sidebar-left"></i> Web-site
+                                        </a>
                                     <li class="waves-effect waves-light">
                                         <a href="{{route('logout')}}">
                                             <i class="ti-layout-sidebar-left"></i> Logout
@@ -292,6 +297,13 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class=" ">
+                                    <a href="{{route('admin.apponitment')}}" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs"> Appointment</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
 
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -347,39 +359,21 @@
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Doctor</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="{{route('admin.create.doctor')}}" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Doctor</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="{{route('admin.list.doctor')}}" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Doctor List</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Patient</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-
                                         <li class=" ">
-                                            <a href="{{route('admin.list.patient')}}" class="waves-effect waves-dark">
+                                            <a href="{{route('doctor.list.patient')}}" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Patient List</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Patients List</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="{{route('doctor.apponitment')}}" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs"> Appointment</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>

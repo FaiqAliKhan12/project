@@ -19,5 +19,13 @@ class Appointment extends Model
         'pt_email',
     ];
 
-    
+
+    public function getDepart()
+    {
+        return $this->belongsTo(Depart::class, 'depart_id', 'id');
+    }
+    public function getDoctor()
+    {
+        return $this->belongsTo(User::class, 'doctor_id', 'id');
+    }
 }

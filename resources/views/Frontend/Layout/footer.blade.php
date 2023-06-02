@@ -118,14 +118,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                 @foreach ($departs as $depart)
                                 <option value="{{$depart->id}}">{{$depart->depart}}</option>
                                 @endforeach
-                               
+
                             </select>
                         </div>
                         <div class="col-xl-6">
                             <select class="form-select wide" id="default-select" class="" name="doctor_id" required>
                                 <option data-display="Doctors">Doctors</option>
-                                <option value="3">Mirazul Alom</option>
-                             
+                                @foreach ($doctors as $doctor)
+                                <option value="{{$doctor->id}}">{{$doctor->name}}</option>
+                                @endforeach
+
                             </select>
                         </div>
                         <div class="col-xl-6">

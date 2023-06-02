@@ -9,20 +9,21 @@ use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Depart;
 use App\Models\Doctor;
+use App\Models\User;
 
 class HomeController extends Controller
 {
     public function Index(){
       $departs = Depart::all();
-      $doctors = Doctor::all();
+      $doctors = User::where('role_id',2)->get();
       return view('Frontend.index',['departs'=>$departs,'doctors'=>$doctors]);
     }
 
     public function book_appointment(Request $request)
     {
-     
+
       if(Auth::check()){
-       
+
         $appointment = Appointment::create([
           'user_id'=>auth()->user()->id,
           'app_date'=>$request->date,
@@ -32,7 +33,7 @@ class HomeController extends Controller
           'pt_name'=>$request->user_name,
           'pt_phone'=>$request->phone,
           'pt_email'=>$request->email,
-         
+
         ]);
         if($appointment){
           return back()->with('success','Your Appointment has been booked Successfully!');

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Depart;
 use App\Models\ContactUs;
+use App\Models\Appointment;
 
 class AdminController extends Controller
 {
@@ -200,6 +201,11 @@ class AdminController extends Controller
                 'password'=>bcrypt($request->password),
             ]);
             return redirect()->route('admin.dashboard');
+    }
+    public function appointment()
+    {
+        $appointments = Appointment::with('getDepart','getDoctor')->get();
+        return view('Backend.Adminlayout.appointment',['appointments'=>$appointments]);
     }
 
 }

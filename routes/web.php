@@ -32,13 +32,12 @@ Route::post('user-rigester',[RegisterController::class,'store_user'])->name('use
 Route::get('/', [HomeController::class, 'index' ])->name('home');
 Route::post('book-appointment', [HomeController::class, 'book_appointment' ])->name('book.appointment');
 Route::get('/about', [AboutController::class, 'index' ]);
-Route::get('/doctor', [DoctorController::class, 'index' ]);
 Route::get('/service', [ServiceController::class, 'index' ]);
 Route::get('/department', [DepartmentController::class, 'index' ]);
 Route::get('/contact', [ContactController::class, 'index' ]);
 Route::post('contact-us', [ContactController::class, 'contact_us' ])->name('contact.us');
 
-
+// Admin Routes
 Route::get('/admin',[AdminController::class,'index'])->name('admin.dashboard');
 Route::get('admin-profile/{id}',[AdminController::class,'admin_profile'])->name('admin.profile');
 Route::post('admin-update-profile/{id}',[AdminController::class,'update_profile'])->name('admin.update.profile');
@@ -59,5 +58,13 @@ Route::get('depart-destroy/{id}',[AdminController::class,'depart_destroy'])->nam
 Route::get('depart-list',[AdminController::class,'depart_list'])->name('admin.list.depart');
 Route::get('contact-list',[AdminController::class,'contact_list'])->name('admin.list.contact');
 Route::get('contact-delete/{$id}',[AdminController::class,'contact_delete'])->name('admin.delete.contact');
+Route::get('appointments',[AdminController::class,'appointment'])->name('admin.apponitment');
 
+
+// Doctor Route
+Route::get('/doctor', [DoctorController::class, 'index' ]);
+Route::get('doctor-profile/{id}',[DoctorController::class,'doctor_profile'])->name('doctor.profile');
+Route::post('doctor-update-profile/{id}',[DoctorController::class,'update_profile'])->name('doctor.update.profile');
+Route::get('patient-lists',[DoctorController::class,'patient_list'])->name('doctor.list.patient');
+Route::get('appointment',[DoctorController::class,'appointment'])->name('doctor.apponitment');
 
